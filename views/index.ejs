@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<% include _debut %>
+		<!-- <p id="accueil">Exppad, pour Experimentation Pad, est un blog regroupant des informations très diverses allant de liens vers des publications sur d'autres sites m'ayant intéressées à des expériences informatiques que j'ai mises en place dans des domaines tels que le développement web, la génération procédurale, l'analyse d'images et autres.</p>-->
+		<h1>Derniers articles</h1>
+		<%if (admin) {%>
+			<a href="./articles/rediger" class="boutonAdmin">Nouvel article</a>
+		<%}%>
+		<hr/>
+		<% include _liste_articles %>
+<% include _fin %>

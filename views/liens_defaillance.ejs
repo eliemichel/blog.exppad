@@ -1,0 +1,6 @@
+<%if (valide) {%>lien valide<%} else {%>
+	<%=defectueux%> personne<%=(defectueux == 1 && ' a') || 's ont'%> signalé ce lien comme défectueux.
+	<%if (admin) {%>
+		<a href="liens/valide/<%=id%>" class="lienValide" onclick="return envoi_lien_defectueux(this, true);">×</a>
+	<%}%>
+<%}%>

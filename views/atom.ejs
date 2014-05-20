@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Blog Exppad</title>
+	<link href="http://blog.exppad.com"/>
+	<updated><%=articles[0].date%></updated>
+	<author>
+		<name>Élie Michel</name>
+		<uri>http://www.exppad.com/</uri>
+	</author>
+	<id>http://blog.exppad.com/</id>
+	<link rel="self" href="http://blog.exppad.com/feeds" />
+
+	<% for(var i = 0 ; i < articles.length ; i++) { %>
+	<entry>
+		<title><%=articles[i].titre%></title>
+		<link href="blog.exppad.com/article/<%=articles[i].id%>"/>
+		<id>http://blog.exppad.com/article/<%=articles[i].id%></id>
+		<updated><%=articles[i].date%></updated>
+		<summary><%=articles[i].resume%></summary>
+		<content type="html"><%=articles[i].contenu%></content>
+	</entry>
+	<% } %>
+</feed>

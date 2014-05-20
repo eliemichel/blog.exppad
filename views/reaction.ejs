@@ -1,0 +1,14 @@
+<!-- Réaction -->
+<%if (typeof(erreur) != 'undefined') {%>
+	<span class="attention" id="erreur_reaction">
+		<%=erreur%>
+	</span>
+<%} else {%>
+	<div>
+		<span class="auteur"><%=auteur%></span>
+		<span class="date"><%=date%></span>
+		<p>
+			<%-reaction%>
+		</p>
+	</div>
+<%}%>

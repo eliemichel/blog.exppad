@@ -1,0 +1,616 @@
+html, body {
+	min-width : 760px;
+	margin : 0px;
+	background-color : #f8f2e3;
+	color : #333;
+	
+	font-family : "Open Sans", sans-serif;
+}
+
+h1, h2 {
+	font-family : YanoneKaffeesatz-Regular;
+}
+
+h1 a {
+	color : #333;
+	text-decoration : none;
+}
+
+h1 a:hover {
+	color : #d9411e;/*#c12c0a;*/
+	text-decoration : none;
+}
+
+h2 {
+	font-size : 2em;
+}
+
+a {
+	color : #2886bb;/*#d9411e;*/
+	text-decoration : none;
+}
+
+a:hover {
+	color : #d9411e;
+	text-decoration : underline;
+}
+
+hr {
+	height : 0px;
+	border : 0px;
+	border-top : 1px solid rgba(0,0,0,0.1);
+	border-bottom : 1px solid rgba(255,255,255,0.3);
+}
+
+
+blockquote {
+	padding : 5px;
+	margin-left : 70px;
+	
+	font-style : italic;
+	font-family : 'Times New Roman', sans-serif;
+	font-size : 1.1em;
+	
+	position : relative;
+}
+
+blockquote:before {
+	content : '\201C';
+	font-style : normal;
+	font-family : 'Times New Roman', sans-serif;
+	font-size : 5em;
+	color : #777;
+	
+	margin-right : 5px;
+	
+	display : block;
+	position : absolute;
+	left : -50px;
+	top : -5px;
+}
+
+.attention {
+	padding : 5px;
+	
+	font-weight : bold;
+	background-color : rgba(255,0,0,.5);
+	border-radius : 5px;
+}
+
+
+/* -=-=-=-=-=-=-=- FORMULAIRES -=-=-=-=-=-=-=- */
+
+label {
+	font-style : italic;
+	font-size : 0.9em;
+	margin-left : 5px;
+}
+
+input[type="text"],
+input[type="password"],
+ textarea {
+	border : none;
+	border-radius : 5px;
+	box-shadow : 0px 0px 1px black;
+	
+	font-family : sans-serif;
+	font-size : 1em;
+}
+
+textarea {
+	width : 100%;
+	-webkit-box-sizing : border-box;
+	   -moz-box-sizing : border-box;
+	        box-sizing : border-box;
+}
+
+input[type=submit] {
+	font-family : YanoneKaffeesatz-Regular, sans-serif;
+	font-size : 1.2em;
+}
+
+
+
+/* -=-=-=-=-=-=-=- HEADER -=-=-=-=-=-=-=- */
+
+body > header {
+	height : 60px;
+	vertical-align : middle;
+	
+	background-color : #d9411e;
+	background-image : -webkit-linear-gradient(top, #d9411e 0%, #c12c0a 100%);
+	background-image :    -moz-linear-gradient(top, #d9411e 0%, #c12c0a 100%);
+	background-image :     -ms-linear-gradient(top, #d9411e 0%, #c12c0a 100%);
+	background-image :      -o-linear-gradient(top, #d9411e 0%, #c12c0a 100%);
+	background-image :         linear-gradient(to bottom, #d9411e 0%, #c12c0a 100%);
+	border-bottom : solid #ad2708 2px;
+	box-shadow : 4px 0px 5px #888;
+}
+
+
+body > header h1 {
+	font-family : "Quicksand Book", sans-serif;
+	color : white;
+	
+	display : inline;
+	text-decoration : none;
+	font-weight : normal;
+	
+	line-height : 60px;
+	margin-left : 100px;
+	
+	font-size : 2em;
+	text-shadow : -1px -1px 0px rgba(0,0,0,.25),
+				   1px  1px 0px rgba(255,255,255,.25);
+}
+
+body > header h1 a {
+	color : white;
+	text-decoration : none;
+}
+
+body > header #menu {
+	font-family : "Quicksand Book", sans-serif;
+	margin : 0;
+	padding : 0;
+	height : 60px;
+	
+	border-left : 1px solid rgba(255,255,255,0.1);
+	border-right : 1px solid rgba(0,0,0,0.1);
+	
+	margin-right : 20px;
+	
+	float : right;
+}
+
+body > header #menu li {
+	list-style : none;
+	height : 60px;
+	float : left;
+	
+	text-align : center;
+	
+}
+
+
+body > header #menu li a {
+	line-height : 60px;
+	display : block;
+	padding : 0px 20px;
+	
+	text-decoration : none;
+	font-size : 1.2em;
+	
+	color : white;
+	text-shadow : -1px -1px 0px rgba(0,0,0,.25),
+				   1px  1px 0px rgba(255,255,255,.25);
+	
+	border-left : 1px solid rgba(0,0,0,0.1);
+	border-right : 1px solid rgba(255,255,255,0.1);
+	
+	/*background-color : #d9411e;
+	background-image : -webkit-linear-gradient(top, #d9411e 0%, #c12c0a 100%);*/
+	background : transparent none;
+	
+	-webkit-transition-property : background;
+	   -moz-transition-property : background;
+	    -ms-transition-property : background;
+	     -o-transition-property : background;
+	        transition-property : background;
+	-webkit-transition-duration : 300ms;
+	   -moz-transition-duration : 300ms;
+	    -ms-transition-duration : 300ms;
+	     -o-transition-duration : 300ms;
+	        transition-duration : 300ms;
+}
+
+body > header #menu li a:hover {
+	background : #c12c0a;/*-webkit-linear-gradient(top, #c12c0a 0%, #bc2a09 100%);*/
+}
+
+
+/* -=-=-=-=-=-=-=- NAV -=-=-=-=-=-=-=- */
+nav, nav a {
+	font-family : "Quicksand Book";
+	color : #777;
+}
+
+nav a:hover {
+	text-decoration : none;
+	text-shadow : 0px 0px 1px #333;
+	color : #333;
+}
+
+
+/* -=-=-=-=-=-=-=- TAGS -=-=-=-=-=-=-=- */
+#tags a, a.tag {
+	display : inline-block;
+	border-radius : 5px;
+	padding : 1px 5px;
+	background-color : #bbb;
+	color : white;
+	font-family : SourceCode, monospace;
+	font-size : 0.8em;
+	text-transform : uppercase;
+}
+
+#tags a:hover, a.tag:hover {
+	color : white;
+	background-color : #555;
+	text-decoration : none;
+}
+
+h1 a.tag {
+	font-size : 60%;
+}
+
+
+#haut_de_page {
+	width : 30px;
+	height : 30px;
+	
+	padding : 2px;
+	
+	text-align : center;
+	
+	position : fixed;
+	right : 50px;
+	bottom : 50px;
+	
+	cursor : pointer;
+	background-color : rgba(0,0,0,0.1);
+	border-radius : 5px;
+	color : white;
+}
+
+#haut_de_page:hover {
+	background-color : rgba(0,0,0,0.6);
+}
+
+#haut_de_page img {
+	width : 100%;
+}
+
+/* -=-=-=-=-=-=-=- FOOTER -=-=-=-=-=-=-=- */
+
+footer {
+	margin : 0;
+	padding : 10px;
+	
+	color : #ddd;
+	font-size : 0.8em;
+	background-color : #444;
+	box-shadow :  0px 30px 30px -30px rgba(255,255,255,0.3) inset;
+	
+	text-align : center;
+	color : #aaa;
+}
+
+#lien_admin, #lien_admin:hover {
+	color : #aaa;
+	text-decoration : none;
+	cursor : text;
+}
+
+
+
+/* -=-=-=-=-=-=-=- CONTENU -=-=-=-=-=-=-=- */
+
+#contenu {
+	margin : 0 15%;
+	padding : 10px;
+	box-shadow :  3px 0px 3px -3px rgba(0,0,0,0.3),
+				 -3px 0px 3px -3px rgba(0,0,0,0.3),
+				  3px 0px 3px -3px rgba(255,255,255,1) inset,
+				 -3px 0px 3px -3px rgba(255,255,255,1) inset;
+}
+
+
+#accueil {
+	font-family : "Quicksand Book", sans-serif;
+	font-size : 1.3em;
+	
+	line-height : 150%;
+	
+	padding : 10px;
+	background-color : rgba(0,0,0,0.6);
+	border-radius : 10px;
+	color : white;
+	
+	box-shadow :  1px 1px 3px rgba(0,0,0,0.3);
+}
+
+#accueil a {
+	color : #65B4E1;
+}
+
+#accueil a:hover {
+	color : #E66C50;
+}
+
+#contenu > h1 {
+	font-family : YanoneKaffeesatz-Regular, sans-serif;
+	font-size : 4em;
+	font-weight : normal;
+	font-variant : small-caps;
+	
+	margin-bottom : 0;
+	margin-top : 20px;
+}
+
+
+/* -=-=-=-=-=-=-=- ARTICLES -=-=-=-=-=-=-=- */
+article {
+	margin-left : 20%;
+	margin-right : 20px;
+	margin-top : 50px;
+	margin-bottom : 50px;
+	
+	position : relative;
+}
+
+.date {
+	font-variant : small-caps;
+	font-size : 1.2em;
+	margin-left : 20px;
+}
+
+article .date {
+	float : left;
+	position : absolute;
+	top : 0;
+	margin-left : -20%;
+	margin-top : 20px;
+}
+
+article > h1 {
+	font-size : 3em;
+	font-weight : normal;
+	font-variant : small-caps;
+	
+	margin-bottom : 0;
+}
+
+article p.resume, p.resume {
+	font-style : italic;
+}
+
+article.unique {
+	margin-left : 20px;
+	line-height : 160%;
+	font-size : 1.1em;
+}
+
+p.signature {
+	text-align : right;
+	font-style : italic;
+	font-family : SourceCode;
+	font-size : .8em;
+}
+
+a.boutonAdmin {
+	float : right;
+	margin-top : -1.4em;
+	
+	color : #333;
+	font-family : YanoneKaffeesatz-Regular;
+	font-size : 2em;
+}
+
+a.boutonAdmin:hover {
+	text-decoration : none;
+	color : #d9411e;
+}
+
+/* -=-=-=-=-=-=-=- FIGURES -=-=-=-=-=-=-=- */
+
+figure {
+	display: inline-block;
+	margin : 0;
+	padding : 0;
+	position : relative;
+	
+	border-radius : .5em;
+	box-shadow : 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+figure img {
+	display : block;
+	border-radius : .5em .5em 0 0;
+	z-index : 10;
+}
+
+figure figcaption {
+	color : #eee;
+	font-family : 'Quicksand Book';
+	background-color : rgba(0,0,0,0.8);
+	
+	display : block;
+	width : 100%;
+	-webkit-box-sizing : border-box;
+	   -moz-box-sizing : border-box;
+	        box-sizing : border-box;
+	padding : 5px;
+	
+	/*position : absolute;
+	bottom : 0;*/
+	
+	border-radius : 0 0 .5em .5em;
+	z-index : 20;
+}
+
+/* -=-=-=-=-=-=-=- REACTIONS -=-=-=-=-=-=-=- */
+.reactions {
+	margin : 5px;
+	padding : 0;
+}
+
+.reactions > div {
+	background-color : rgba(0,0,0,0.1);
+	margin-bottom : 10px;
+	padding : 5px;
+	border-radius : 5px;
+}
+
+.reactions .auteur {
+	color : black;
+	font-variant : small-caps;
+	font-weight : bold;
+}
+
+.reactions .date {
+	float : right;
+	margin : 0;
+	margin-right : 5px;
+}
+
+.reactions > div > p {
+	margin-bottom : 5px;
+	margin-top : 5px;
+	margin-left : 20px;
+}
+
+.reactions form {
+	margin-top : 30px;
+}
+
+
+#toolbar {
+	display : inline-block;
+	float : right;
+	height : 20px;
+}
+
+#toolbar span {
+	float : left;
+	margin-right : 5px;
+	display : inline-block;
+	
+	width : 20px;
+	height : 20px;
+	text-align : center;
+	background-color : rgba(0,0,0,0.2);
+	border-radius : 3px;
+	
+	cursor : pointer;
+	
+	-webkit-transition-property : box-shadow;
+	   -moz-transition-property : box-shadow;
+	    -ms-transition-property : box-shadow;
+	     -o-transition-property : box-shadow;
+	        transition-property : box-shadow;
+	-webkit-transition-duration : 100ms;
+	   -moz-transition-duration : 100ms;
+	    -ms-transition-duration : 100ms;
+	     -o-transition-duration : 100ms;
+	        transition-duration : 100ms;
+}
+
+#toolbar span:hover {
+	box-shadow : 0px 0px 3px rgba(0,0,0,0.6);
+	/*box-shadow : 0px 0px 3px rgba(255,255,255,1) inset;*/
+}
+
+#bouton_link img {
+	width : 14px;
+	height : 14px;
+	margin : 3px;
+}
+
+#url {
+	float : right;
+	margin : 0;
+	height : 18px;
+	display : inline-block;
+}
+
+#url.legende {
+	font-style : italic;
+	color : #888;
+}
+
+
+/* -=-=-=-=-=-=-=- LIENS -=-=-=-=-=-=-=- */
+.lien {
+	margin-left : 10px;
+	padding-left : 5px;
+	border-radius : 5px;
+	border-left : 5px solid rgba(0,0,0,.3);
+	
+	position : relative;
+}
+
+.lien h1 a {
+	color : #2886bb;
+}
+
+.lien h1 a:hover {
+	color : #d9411e;
+}
+
+.lien a.defectueux {
+	display : block;
+	position : absolute;
+	top : 5px;
+	right : 0;
+	
+	font-size : 80%;
+}
+
+.lien a.modifier {
+	display : block;
+	position : absolute;
+	top : 20px;
+	right : 0;
+	
+	font-size : 80%;
+}
+
+.lien a.lienValide {
+	float : right;
+	margin-right : 4px;
+	margin-top : -1px;
+	
+	font-size : 1.2em;
+	color : white;
+}
+
+
+/* -=-=-=-=-=-=-=- FONT-FACE -=-=-=-=-=-=-=- */
+
+@font-face {
+	font-family : "Quicksand Book";
+	src : url('font/Quicksand_Book.otf');
+}
+
+@font-face {
+	font-family : "YanoneKaffeesatz-Regular";
+	src : url('font/YanoneKaffeesatz-Regular.otf');
+}
+
+
+@font-face {
+	font-family : "SourceCode";
+	src : url('font/SourceCodePro-Regular.otf');
+}
+
+
+@font-face {
+	font-family : "Open Sans";
+	src : url('font/OpenSans-Regular.ttf');
+}
+
+
+
+@font-face {
+	font-family : "Open Sans Light";
+	src : url('font/OpenSans-Light.ttf');
+}
+
+
+@font-face {
+	font-family : "Open Sans Semibold";
+	src : url('font/OpenSans-Semibold.ttf');
+}
+

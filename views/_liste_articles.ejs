@@ -1,0 +1,14 @@
+<!-- Affiche la liste des articles située dans *articles* -->
+<%if (articles.length == 0) {%>
+	<em>Aucun article</em>
+<%}
+else {
+for(var i = 0 ; i < articles.length ; i++) {%>
+	<article>
+		<h1><a href="/article/<%=articles[i].id%>"><%=articles[i].titre%></a></h1>
+		<span class="date"><%=articles[i].date%></span>
+		<p class="resume">
+			<%=articles[i].resume%>
+		</p>
+	</article>
+<%} }%>

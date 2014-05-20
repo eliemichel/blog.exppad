@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<% include _debut %>
+		<nav><a href="./">Accueil</a> &gt; <a href="./articles">Articles</a> &gt; <a href="./articles/date/<%=date%>"><%=date_affichage%></a></nav>
+		
+		<h1>Articles parus <%=date_affichage.charAt(0).toLowerCase() + date_affichage.slice(1)%></h1>
+		<hr/>
+		<% include _liste_articles %>
+<% include _fin %>

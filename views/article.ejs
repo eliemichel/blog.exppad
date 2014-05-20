@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<% include _debut %>
+		<nav><a href="./">Accueil</a> &gt; <a href="./articles">Articles</a> &gt; <a href="./article/<%=id%>"><%=titre%></a></nav>
+		<h1><a href="./article/<%=id%>"><%=titre%></a></h1>
+		<span class="date"><%=date%></span>
+		<%if (admin) {%>
+			<a href="./articles/rediger/<%=id%>" class="boutonAdmin">Modifier</a>
+		<%}%>
+		<hr/>
+		<%if (tags != '') {%>
+		<div id="tags"><%-tags%>
+		</div>
+		<hr/>
+		<%}%>
+		<article class="unique">
+			<p class="resume">
+				<%=resume%>
+			</p>
+			<%-contenu%>
+		</article>
+		
+		
+		<%if (id != 'erreur') {%>
+		<hr/>
+		<h2>Réactions</h2>
+		<div class="reactions">
+			<%if (reactions.length == 0) {%>
+			<p id="pasdereaction">
+				<em>Pas de réactions</em>
+			</p>
+			<%}
+			for (var i = 0 ; i < reactions.length ; i++) {%>
+			<div>
+				<span class="auteur"><%=reactions[i].auteur%></span>
+				<span class="date"><%=reactions[i].date%></span>
+				<p>
+					<%-reactions[i].reaction%>
+				</p>
+			</div>
+			<%}%>
+			<script type="text/javascript" id="script_envoi_reaction">
+			//<!--
+				function envoi_reaction () {
+					var pseudo = $('#pseudo');
+					var reaction = $('#reaction');
+					var data = 'pseudo=' + encodeURIComponent(pseudo.val())
+					+ '&reaction=' + encodeURIComponent(reaction.val())
+					+ '&article=<%=id%>';
+					
+					$.ajax({
+						method : 'POST',
+						url : '/reaction',
+						data : data,
+						success : function (res) {
+							$('#erreur_reaction').remove();
+							$('#pasdereaction').remove();
+							$(res).hide().insertBefore('#script_envoi_reaction').slideDown(200);
+							if (res.trim().slice(-6) == '</div>') { // Pas une erreur (Oui je sais, c'est du bricolage...)
+								pseudo.val('');
+								reaction.val('');
+							}
+						}
+					});
+					
+					return false;
+				}
+				
+			//-->
+			</script>
+			<form method="post" action="./reaction" onsubmit="return envoi_reaction()">
+				<label for="pseudo">Pseudo</label><br/>
+				<input type="text" name="pseudo" id="pseudo"/><br/>
+				<br/>
+				<label for="reaction">Réaction</label>
+				<div id="toolbar">
+					<span id="bouton_em"><em>a</em></span>
+					<span id="bouton_strong"><strong>a</strong></span>
+					<span id="bouton_u"><u>a</u></span>
+					<span id="bouton_del"><del>a</del></span>
+					<span id="bouton_link"><img alt="lien" src="public/images/lien.svg"/></span>
+					<input type="text" id="url" />
+				</div>
+				<br/>
+				<textarea rows="4" name="reaction" id="reaction"></textarea><br/>
+				<input type="submit" value="Réagir"/>
+			</form>
+		</div>
+		<%}%>
+<% include _fin %>

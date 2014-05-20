@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<% include _debut %>
+		<nav><a href="./">Accueil</a> &gt; <a href="./admin">Administration</a></nav>
+		<%if (typeof(connecte) == 'undefined') {%>
+			<p id="accueil">L'accès à l'administration est réservée à ses membres et donc protégée par un mot de passe.</p>
+			<hr/>
+			<%if (typeof(erreur) != 'undefined') {%>
+				<span class="attention"><%=erreur%></span><br/><br/>
+			<%}%>
+			<form method="post" action="./admin">
+				<label for="mdp">Mot de passe :</label><br/>
+				<input id="mdp" name="mdp" type="password"/><br/>
+				<input name="dest" type="hidden" value="<%-dest%>"/>
+				<br/>
+				<input type="submit" value="Valider"/>
+			</form>
+			<hr/>
+		<%} else {%>
+			<p id="accueil">Accès à l'administration autorisé. Pensez à vous <a href="./admin/deconnexion">déconnecter</a>.</p>
+		<%}%>
+		<p>
+			<a href="/">Retour à l'accueil</a>
+		</p>
+<% include _fin %>

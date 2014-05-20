@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<% include _debut %>
+		<nav><a href="./">Accueil</a> &gt; <a href="./articles">Articles</a> &gt; <a href="./articles/rediger">Rédiger</a></nav>
+		<%if (admin) {%>
+			<h1>Rédiger un nouvel article</h1>
+			<hr/>
+			<form method="post" action="./articles/rediger" onsubmit="return envoi_reaction()">
+				<label for="titre">Titre</label><br/>
+				<input type="text" name="titre" id="titre" <%-(nouveau ? '' : 'value="'+titre+'"')%>/><br/>
+				<br/>
+				<label for="resume">Résumé</label><br/>
+				<textarea rows="2" name="resume" id="resume"><%-(nouveau ? '' : resume)%></textarea><br/>
+				<br/>
+				<label for="article">Article</label>
+				<div id="toolbar">
+					Markdown
+				</div>
+				<br/>
+				<textarea rows="6" name="article" id="article"><%-(nouveau ? '' : article)%></textarea><br/>
+				<label for="tags">Tags</label><br/>
+				<input type="text" name="tags" id="tags" <%-(nouveau ? '' : 'value="'+tags+'"')%>/><br/>
+				<br/>
+				<label for="titre">Auteur</label><br/>
+				<input type="text" name="auteur" id="auteur" value="<%-(nouveau ? 'Elie' : auteur)%>"/><br/>
+				<br/>
+				<input type="hidden" name="titreURL" value="<%-(nouveau ? '' : titreURL)%>"/>
+				<input type="submit" value="Publier"/>
+			</form>
+		<%} else {%>
+			<p id="accueil">Vous n'êtes pas autorisé à publier un article.</p>
+			<p>
+				<a href="/">Retour à l'accueil</a>
+			</p>
+		<%}%>
+<% include _fin %>

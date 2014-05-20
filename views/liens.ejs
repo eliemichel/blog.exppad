@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<% include _debut %>
+		<script type="text/javascript" id="script_envoi_reaction">
+		//<!--
+			function envoi_lien_defectueux (lien, valide) {
+				
+				$.ajax({
+					method : 'GET',
+					url : lien.href,
+					success : function (res) {
+						if (!valide) {
+							if ($(lien).parent().find('.attention').length == 0) {
+								$(lien).parent().append('<p class="attention"></p>');
+							}
+							$(lien).parent().find('.attention').html(res)
+						}
+						else {
+							$(lien).parent().remove();
+						}
+					}
+				});
+				
+				return false;
+			}
+			
+		//-->
+		</script>
+		
+		<nav><a href="./">Accueil</a> &gt; <a href="liens">Liens</a></nav>
+		<p id="accueil">
+			Cette page regroupe des liens menant vers des pages qui m'ont inspiré ou intéressé. Ils touchent des domaines variés et sont donc organisés par catégories. Si un lien s'avère défectueux, merci de le signaler !
+		</p>
+		<%for (var j = 0 ; j < categories.length ; j++) {%>
+			<h1><%=categories[j].titre%></h1>
+			<%if (admin) {%>
+				<a href="liens/ajouter/<%=categories[j].id%>" class="boutonAdmin">Ajouter un lien</a>
+			<%}%>
+			<%for (var i = 0 ; i < categories[j].liens.length ; i++) {%>
+			<%var lien = categories[j].liens[i]%>
+			<div class="lien">
+				<h1><a href="<%=lien.url%>"><%=lien.titre%></a></h1>
+				<%if (admin) {%>
+					<a href="liens/modifier/<%=lien.id%>" class="modifier">(Modifier)</a>
+				<%}%>
+				<a href="liens/defaillance/<%=lien.id%>" class="defectueux" onclick="return envoi_lien_defectueux(this);">(Lien brisé)</a>
+				<p>
+					<%=lien.description%>
+				</p>
+				<%if (lien.defectueux > 0) {%>
+				<p class="attention">
+					<%=lien.defectueux%> personne<%=(lien.defectueux == 1 && ' a') || 's ont'%> signalé ce lien comme défectueux.
+					<%if (admin) {%>
+						<a href="liens/valide/<%=lien.id%>" class="lienValide" onclick="return envoi_lien_defectueux(this, true);">×</a>
+					<%}%>
+				</p>
+				<%}%>
+			</div>
+			<%}%>
+			<hr/>
+		<%}%>
+		<p>
+			<a href="/">Retour à l'accueil</a>
+		</p>
+<% include _fin %>
