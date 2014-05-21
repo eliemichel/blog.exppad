@@ -8,12 +8,12 @@
 		<uri>http://www.exppad.com/</uri>
 	</author>
 	<id>http://blog.exppad.com/</id>
-	<link rel="self" href="http://blog.exppad.com/feeds" />
+	<link rel="self" href="/feeds" />
 
 	<% for(var i = 0 ; i < articles.length ; i++) { %>
 	<entry>
 		<title><%=articles[i].titre%></title>
-		<link href="blog.exppad.com/article/<%=articles[i].id%>"/>
+		<link href="/article/<%=articles[i].id%>"/>
 		<id>http://blog.exppad.com/article/<%=articles[i].id%></id>
 		<updated><%=articles[i].date%></updated>
 		<summary><%=articles[i].resume%></summary>
