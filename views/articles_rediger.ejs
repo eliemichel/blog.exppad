@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <% include _debut %>
-		<nav><a href="./">Accueil</a> &gt; <a href="./articles">Articles</a> &gt; <a href="./articles/rediger">Rédiger</a></nav>
+		<nav><a href="/">Accueil</a> &gt; <a href="/articles">Articles</a> &gt; <a href="/articles/rediger">Rédiger</a></nav>
 		<%if (admin) {%>
 			<h1>Rédiger un nouvel article</h1>
 			<hr/>
-			<form method="post" action="./articles/rediger" onsubmit="return envoi_reaction()">
+			<form method="post" action="/articles/rediger" onsubmit="return envoi_reaction()">
 				<label for="titre">Titre</label><br/>
 				<input type="text" name="titre" id="titre" <%-(nouveau ? '' : 'value="'+titre+'"')%>/><br/>
 				<br/>
