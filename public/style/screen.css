@@ -292,7 +292,14 @@ footer {
 	cursor : text;
 }
 
-
+#lien_rss a {
+	display: block;
+	width: 30px;
+	height: 30px;
+	float: right;
+	background-image: url('../images/rss.png');
+	margin: 4px;
+}
 
 /* -=-=-=-=-=-=-=- CONTENU -=-=-=-=-=-=-=- */
 

@@ -2,6 +2,8 @@
 	Fonctions utilisées dans diverses pages.
 **/
 
+var fs = require('fs');
+
 //exports.domain = 'http://localhost:3615';
 //exports.domain = 'http:129.199.159.97//:3615';
 //exports.domain = 'http:/www.exppad.com';
@@ -266,6 +268,15 @@ exports.newTitreURL = function (titre, mongoose, callback) {
 		else articlesModel.find({titreURL : (test = titreURL + (++i), test)}, '', fun);
 	}
 	articlesModel.find({titreURL : test}, '', fun);
+};
+
+
+/* -=-=-=-=-=-=-=- LOG SYSTEM -=-=-=-=-=-=-=- */
+exports.log = function(msg) {
+	var d = new Date();
+	fs.appendFile('/var/log/blog/logfile', '[' + d + '] ' + msg + '\n', function (err) {
+		  if (err) throw err;
+	});
 };
 
 

@@ -11,6 +11,7 @@ var index = require('./routes/index'),
 	liens = require('./routes/liens'),
 	liens_defaillance = require('./routes/liens_defaillance'),
 	admin = require('./routes/admin'),
+	webmention = require('./routes/webmention'),
 	utils = require('./utils'),
 	db = require('./database');
 
@@ -111,6 +112,20 @@ app
 
 .get('/contact', function (req, res) {
 	res.render('contact.ejs');
+})
+
+.get('/webmention', function (req, res) {
+	webmention.getData(utils, {}, function (data) {
+		res.statusCode = data.status;
+		res.render('webmention.ejs', data);
+	});
+})
+
+.post('/webmention', function (req, res) {
+	webmention.getData(utils, req.body, function (data) {
+		res.statusCode = data.status;
+		res.render('webmention.ejs', data);
+	});
 })
 
 // Sécurité de l'administration //

@@ -17,6 +17,7 @@ exports.init = function (utils, mongoose) {
 		titreURL : String,
 		auteur : String,
 		date : {type : Date, default : Date.now},
+		modif : {type : Date, default : Date.now},
 		resume : String,
 		script : String,
 		rendu : String,

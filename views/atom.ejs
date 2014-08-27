@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>Blog Exppad</title>
 	<link href="http://blog.exppad.com"/>
-	<updated><%=articles[0].date%></updated>
+	<updated><%=articles[0].modif%></updated>
 	<author>
 		<name>Élie Michel</name>
 		<uri>http://www.exppad.com/</uri>
@@ -15,9 +15,13 @@
 		<title><%=articles[i].titre%></title>
 		<link href="/article/<%=articles[i].id%>"/>
 		<id>http://blog.exppad.com/article/<%=articles[i].id%></id>
-		<updated><%=articles[i].date%></updated>
+		<updated><%=articles[i].modif%></updated>
+		<published><%=articles[i].date%></published>
 		<summary><%=articles[i].resume%></summary>
-		<content type="html"><%=articles[i].contenu%></content>
+		<content type="html">
+			<%=articles[i].resume%>
+			<%=articles[i].contenu%>
+		</content>
 	</entry>
 	<% } %>
 </feed>
