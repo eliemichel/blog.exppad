@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <% include _debut %>
 		<nav><a href="./">Accueil</a> &gt; <a href="./articles">Articles</a> &gt; <a href="./article/<%=id%>"><%=titre%></a></nav>
-		<h1><a href="./article/<%=id%>"><%=titre%></a></h1>
-		<span class="date"><%=date%></span>
-		<%if (admin) {%>
-			<a href="./articles/rediger/<%=id%>" class="boutonAdmin">Modifier</a>
-		<%}%>
-		<hr/>
-		<%if (tags != '') {%>
-		<div id="tags"><%-tags%>
+		<div class="h-entry">
+			<h1 class="p-name"><a class="u-url" href="./<%=id%>"><%=titre%></a></h1>
+			<time class="date dt-published" datetime="<%=isodate%>"><%=date%></time>
+			<%if (admin) {%>
+				<a href="./articles/rediger/<%=id%>" class="boutonAdmin">Modifier</a>
+			<%}%>
+			<hr/>
+			<%if (tags != '') {%>
+			<div id="tags"><%-tags%>
+			</div>
+			<hr/>
+			<%}%>
+			<article class="unique">
+				<p class="resume p-summary">
+					<%=resume%>
+				</p>
+				<div class="e-content">
+					<%-contenu%>
+				</div>
+			</article>
 		</div>
-		<hr/>
-		<%}%>
-		<article class="unique">
-			<p class="resume">
-				<%=resume%>
-			</p>
-			<%-contenu%>
-		</article>
 		
 		
 		<%if (id != 'erreur') {%>

@@ -111,7 +111,7 @@ exports.formatClassicDate = function (date) {
 };
 
 exports.signature = function (date, auteur) {
-	return '<p class="signature">Article publié le ' + exports.formatClassicDate(date) + ' par ' + auteur + '</p>'
+	return '<p class="signature">Article publié le ' + exports.formatClassicDate(date) + ' par <span class="p-author h-card">' + auteur + '</span></p>'
 };
 
 /* -=-=-=-=-=-=-=- CONNEXION À LA BASE DE DONNÉES -=-=-=-=-=-=-=- */
@@ -195,7 +195,7 @@ exports.convertTags = function (tags, model, callback) {
 exports.formatTags = function (tags) {
 	var retour = '';
 	tags.forEach(function (tag) {
-		retour += '\n\t\t\t<a href="articles/tag/' + tag.toLowerCase().replace(' ', '-') + '">' + tag + '</a>';
+		retour += '\n\t\t\t<a class="p-category" href="articles/tag/' + tag.toLowerCase().replace(' ', '-') + '">' + tag + '</a>';
 	});
 	return retour;
 };
